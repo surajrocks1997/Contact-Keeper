@@ -31,7 +31,7 @@ const ContactState = (props) => {
         type: "personal",
       },
       {
-        id: 1,
+        id: 3,
         name: "Harry White",
         email: "harry@gmail.com",
         phone: "333-333-3333",
@@ -49,6 +49,9 @@ const ContactState = (props) => {
   };
 
   //delete contact
+  const deleteContact = (id) => {
+    dispatch({ type: DELETE_CONTACT, payload: id });
+  };
 
   //set current contact
 
@@ -65,6 +68,7 @@ const ContactState = (props) => {
       value={{
         contacts: state.contacts,
         addContact,
+        deleteContact,
       }}
     >
       {props.children}
