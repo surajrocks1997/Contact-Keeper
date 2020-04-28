@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const Navbar = ({ title, icon }) => {
   return (
     <div className="navbar bg-primary">
-      <h1>
+      <h2>
         <i className={icon} /> {title}
-      </h1>
+      </h2>
       <ul>
         <li>
           <Link to='/'>Home</Link>
