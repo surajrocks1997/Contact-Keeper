@@ -28,7 +28,7 @@ const AuthState = (props) => {
 
   // Load user
   const loadUser = async () => {
-    if(localStorage.token) {
+    if (localStorage.token) {
       setAuthToken(localStorage.token);
     }
 
@@ -58,7 +58,6 @@ const AuthState = (props) => {
       });
 
       loadUser();
-
     } catch (err) {
       dispatch({
         type: LOGIN_FAIL,
@@ -84,7 +83,6 @@ const AuthState = (props) => {
       });
 
       loadUser();
-
     } catch (err) {
       dispatch({
         type: REGISTER_FAIL,
@@ -94,6 +92,7 @@ const AuthState = (props) => {
   };
 
   // Logout
+  const logout = () => dispatch({ type: LOGOUT });
 
   //Clear Errors
   const clearErrors = () =>
@@ -113,6 +112,7 @@ const AuthState = (props) => {
         loadUser,
         clearErrors,
         login,
+        logout,
       }}
     >
       {props.children}
